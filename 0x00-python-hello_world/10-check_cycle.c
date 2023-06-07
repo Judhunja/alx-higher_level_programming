@@ -11,15 +11,12 @@ int check_cycle(listint_t *list)
 	listint_t *ptr = list;
 	listint_t *fastptr = list;
 
-	list = malloc(sizeof(listint_t));
-
 	if (list == NULL)
 	{
-		free(list);
 		return (0);
 	}
 
-	while (ptr->next != NULL && fastptr->next->next != NULL)
+	while (fastptr->next->next != NULL)
 	{
 		ptr = ptr->next;
 		fastptr = fastptr->next->next;
