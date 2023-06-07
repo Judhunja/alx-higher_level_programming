@@ -15,6 +15,7 @@ int check_cycle(listint_t *list)
 
 	if (list == NULL)
 	{
+		free(list);
 		return (0);
 	}
 
