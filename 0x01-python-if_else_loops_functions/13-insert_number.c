@@ -11,17 +11,17 @@
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *ptr = *head;
+	listint_t *temp = *head;
+	unsigned int pos = 0;
+	unsigned int index = 0;
 
-	if (*head == NULL)
+	temp = malloc(sizeof(listint_t));
+
+	while (pos < index - 1 && temp->next != NULL)
 	{
-		free(ptr);
-		return (0);
+		temp = temp->next;
 	}
-	while (ptr->next != NULL)
-	{
-		ptr = ptr->next;
-	}
-	ptr->n = number;
-	return (0);
+	temp->n = number;
+
+	return (temp);
 }
