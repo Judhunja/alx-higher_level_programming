@@ -13,7 +13,12 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *ptr = *head;
 
-	while (ptr->next != NULL && *head != NULL)
+	if (*head == NULL)
+	{
+		free(ptr);
+		return (0);
+	}
+	while (ptr->next != NULL)
 	{
 		ptr = ptr->next;
 	}
