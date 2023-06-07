@@ -11,6 +11,8 @@ int check_cycle(listint_t *list)
 	listint_t *ptr = list;
 	listint_t *fastptr = list;
 
+	list = malloc(sizeof(listint_t));
+
 	if (list == NULL)
 	{
 		return (0);
@@ -24,6 +26,10 @@ int check_cycle(listint_t *list)
 		if (ptr == fastptr)
 		{
 			return (1);
+		}
+		else
+		{
+			return (0);
 		}
 	}
 	return (0);
