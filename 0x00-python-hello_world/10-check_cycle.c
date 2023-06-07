@@ -26,9 +26,7 @@ int check_cycle(listint_t *list)
 			return (1);
 		}
 		else
-		{
-			return (0);
-		}
+			break;
 	}
 	return (0);
 }
