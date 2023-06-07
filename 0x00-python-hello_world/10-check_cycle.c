@@ -26,5 +26,9 @@ int check_cycle(listint_t *list)
 			return (1);
 		}
 	}
+	if (ptr->next == NULL && fastptr->next->next == NULL)
+	{
+		return (0);
+	}
 	return (0);
 }
