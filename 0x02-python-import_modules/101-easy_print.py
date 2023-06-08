@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-import builtins
+import os
 
-builtins.print("#pythoniscool")
+os.system("echo -n '{}\n'".format("#pythoniscool"))
