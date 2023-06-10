@@ -8,3 +8,7 @@ def no_c(my_string):
             my_new += x
 
     return my_new
+
+
+if __name__ == "__main__":
+    no_c(my_string)
