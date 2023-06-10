@@ -11,4 +11,4 @@ def new_in_list(my_list, idx, element):
 
 
 if __name__ == "__main__":
-    new_in_list()
+    new_in_list(my_list, idx, element)
