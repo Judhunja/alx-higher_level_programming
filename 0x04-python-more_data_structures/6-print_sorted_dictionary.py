@@ -5,6 +5,5 @@ def print_sorted_dictionary(a_dictionary):
             print(f"{x}: {v}")
 
 
-
 if __name__ == "__main__":
     print_sorted_dictionary(a_dictionary)
