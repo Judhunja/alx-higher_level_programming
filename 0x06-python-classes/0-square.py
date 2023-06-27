@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 class Square:
-    """ defines a class square
-    """
+    """A class representing a square."""
     def __init__(self):
-        """initializes class Square
-        args:
-            none
-        """
+        """initializes an iinstance of the class Square."""
         pass
-    def square(self):
-        """initializes object square
-        args:
-            square: a square
+    def square(self, square):
+        """initializes object square to the instance variable.
+
+        Args:
+            square: A square object.
         """
         self.square = square
