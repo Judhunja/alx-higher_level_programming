@@ -13,8 +13,8 @@ class Square:
         Initializes an instance variable with optional private
         instance attributes size and position
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -50,7 +50,7 @@ class Square:
         confirming that it is valid
         """
         if isinstance(value, tuple) and len(value) == 2\
-                and all(isinstance(x, int) and x > 0 for x in value):
+                and all(isinstance(x, int) and x >= 0 for x in value):
             self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
