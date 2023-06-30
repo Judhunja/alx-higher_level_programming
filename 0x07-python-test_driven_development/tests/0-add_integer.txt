@@ -1,0 +1,47 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+successes:
+>>> add_integer(44.9, 100.3)
+145
+>>> add_integer(3, 6)
+9
+>>> add_integer(5, 3.5)
+9
+
+failures:
+using strings instead of numbers
+>>> add_integer("hello", 3)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(3, "hello")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+using a list instead of numbers
+>>> add_integer([4, 5], 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(5, [4,5])
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+using a dict instead of numbers
+>>> add_integer({"dog": "joe"}, 8)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(8, {"dog": "joe"})
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+using None
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
