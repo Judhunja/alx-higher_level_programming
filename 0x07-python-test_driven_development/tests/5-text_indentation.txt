@@ -1,0 +1,57 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("How are you?")
+How are you?
+<BLANKLINE>
+
+>>> text_indentation("Good day.")
+Good day.
+<BLANKLINE>
+
+>>> text_indentation("Buy: carrots, yams and pineapples")
+Buy:
+<BLANKLINE>
+carrots, yams and pineapples
+
+>>> text_indentation("Buy: carrots, yams and pineapples.")
+Buy:
+<BLANKLINE>
+carrots, yams and pineapples.
+<BLANKLINE>
+
+>>> text_indentation(".")
+.
+<BLANKLINE>
+
+>>> text_indentation("?")
+?
+<BLANKLINE>
+
+>>> text_indentation(":")
+:
+<BLANKLINE>
+
+>>> text_indentation(23)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation({"dog": "Joe"})
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation((23, 56))
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(["Joe", "Amy"])
+Traceback (most recent call last):
+TypeError: text must be a string
+
