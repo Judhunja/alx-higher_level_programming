@@ -63,12 +63,11 @@ class Rectangle:
         res = ""
 
         if isinstance(Rectangle.print_symbol, list):
-            for _ in range(self.__height - 1):
-                res += ' '.join(map(str, Rectangle.print_symbol)) * self.__width + "\n"
-            res += ' '.join(map(str, Rectangle.print_symbol)) * self.__width
-            return res
+            for char in range(self.__height - 1):
+                res += " ".join(Rectangle.print_symbol) * self.__width + "\n"
+            res += " ".join(Rectangle.print_symbol) * self.__width
         else:
-            for _ in range(self.__height - 1):
+            for char in range(self.__height - 1):
                 res += Rectangle.print_symbol * self.__width + "\n"
             res += Rectangle.print_symbol * self.__width
 
