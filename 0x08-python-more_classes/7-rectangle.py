@@ -60,18 +60,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        res = ""
-
-        if isinstance(Rectangle.print_symbol, list):
-            for char in range(self.__height - 1):
-                res += " ".join(Rectangle.print_symbol) * self.__width + "\n"
-            res += " ".join(Rectangle.print_symbol) * self.__width
-        else:
-            for char in range(self.__height - 1):
-                res += Rectangle.print_symbol * self.__width + "\n"
-            res += Rectangle.print_symbol * self.__width
-
-        return res
+        rect = ""
+        for _ in range(self.__height):
+            rect += str(self.print_symbol) * self.__width + "\n"
+        return rect.rstrip()
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
