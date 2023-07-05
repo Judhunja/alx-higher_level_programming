@@ -65,6 +65,10 @@ passing no arguments
 Traceback (most recent call last):
 TypeError: add_integer() missing 1 required positional argument: 'a'
 
+passing one argument
+>>> add_integer(2)
+100
+
 more arguments than the function can take
 >>> add_integer(5, 6, 7)
 Traceback (most recent call last):
