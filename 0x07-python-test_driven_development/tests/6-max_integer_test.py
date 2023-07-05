@@ -3,7 +3,7 @@
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
-""" This module contains a class TestMaxInt """
+
 
 class TestMaxInteger(unittest.TestCase):
     """
