@@ -12,7 +12,7 @@ class TestMaxInteger(unittest.TestCase):
     Contains tests for the max int function
     """
 
-    def test_max_at_end(self):
+    def test_max_at_beginning(self):
         self.assertEqual(max_integer([3, 2, 1]), 3)
         self.assertEqual(max_integer([6, 5, 4]), 6)
 
