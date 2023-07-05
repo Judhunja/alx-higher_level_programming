@@ -1,11 +1,17 @@
 #!/usr/bin/python3
+"""
+this module contains a text_indentation function
+"""
+
+
 def text_indentation(text):
     """
     Prints text with 2 new lines after each of these characters:
     '.', '?' and ':'
 
     Args:
-        text(str) : text to print out with new lines after the specified characters
+        text(str) : text to print out
+        with new lines after the specified characters
 
     Raises:
         TypeError: if text isn't a string
