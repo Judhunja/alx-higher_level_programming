@@ -46,3 +46,13 @@
 >>> my_list.print_sorted()
 [2]
 
+>>> my_list = MyList()
+>>> my_list.append('t')
+>>> my_list.append('e')
+>>> my_list.append('s')
+>>> my_list.append('t')
+>>> print(my_list)
+['t', 'e', 's', 't']
+
+>>> my_list.print_sorted()
+['e', 's', 't', 't']
