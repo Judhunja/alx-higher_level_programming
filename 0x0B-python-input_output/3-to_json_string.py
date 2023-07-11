@@ -9,6 +9,9 @@ def to_json_string(my_obj):
 
     Args:
         my_obj(object): object to obtain JSON representation
+
+    Returns:
+        str: the JSON representation of the object
     """
     json_obj = json.dumps(my_obj)
 
