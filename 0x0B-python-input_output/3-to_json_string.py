@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """ This module contains a to_json_string function """
+import json
 
 
 def to_json_string(my_obj):
@@ -13,6 +13,4 @@ def to_json_string(my_obj):
     Returns:
         str: the JSON representation of the object
     """
-    json_obj = json.dumps(my_obj)
-
-    return json_obj
+    return json.dumps(my_obj)
