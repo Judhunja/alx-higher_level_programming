@@ -5,6 +5,7 @@ load_from_json_file function and add_item function
 """
 import json
 import sys
+from os.path import exists
 
 
 def save_to_json_file(my_obj, filename):
@@ -29,14 +30,15 @@ def load_from_json_file(filename):
         return json.load(json_f)
 
 
-def add_items(args):
-    """ adds command line arguments to JSON file """
-    all_args = []
+if __name__ == "__main__":
+    filename = "add_item.json"
 
-    all_args = load_from_json_file("add_item.json")
+    """ adds command line arguments to JSON file """
+    if not exists(filename):
+        save_to_json_file([], filename)
+
+    all_args = load_from_json_file(filename)
 
     all_args.extend(sys.argv[1:])
 
-    save_to_json_file(all_args, "add_item.json")
-
-    return all_args
+    save_to_json_file(all_args, filename)
