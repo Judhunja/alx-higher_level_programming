@@ -49,6 +49,15 @@ class Square(Rectangle):
             if "y" in kwargs:
                 self.y = kwargs["y"]
 
+    def to_dictionary(self):
+        """ Returns the dict representation of a Square """
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y,
+        }
+
     def __str__(self):
         """ Overrides the Rectangle __str__ method """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
