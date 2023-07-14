@@ -63,6 +63,8 @@ class Rectangle(Base):
         for key, value in prefixed_attrs.items():
             if key.startswith("_Rectangle__"):
                 attrs[key[len("_Rectangle__"):]] = value
+            else:
+                attrs[key] = value
 
         return attrs
 
