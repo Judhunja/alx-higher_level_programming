@@ -11,6 +11,14 @@ from unittest.mock import patch
 from io import StringIO
 
 
+class TestPycodestyle(unittest.TestCase):
+    """ Tests for pycodestyle compliance"""
+    def test_pycodestyle(self):
+        """ Asserts that there are 0 pycodestyle errors """
+        a = pycodestyle.StyleGuide()
+        b = a.check_files(['models/rectangle.py'])
+        self.assertEqual(b.total_errors, 0, f"Found {b.total_errors} style violations.")
+
 class TestRectangle(unittest.TestCase):
     """ Tests for rectangle.py """
     def setUp(self):
