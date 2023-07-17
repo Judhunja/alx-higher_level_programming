@@ -70,10 +70,9 @@ class Base:
         sets dummy values to dummy attributes
         """
         if cls.__name__ == "Rectangle":
-            class_ins = cls("width", "height")
-        elif cls.__name__ == "Square":
-            class_ins = cls("width")
-
+            class_ins = cls(1, 1)
+        if cls.__name__ == "Square":
+            class_ins = cls(1)
         class_ins.update(**dictionary)
         return class_ins
 
