@@ -31,29 +31,18 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ Assigns an argument to each attribute """
+        variables = ["id", "width", "height", "x", "y"]
+
         for j, arg in enumerate(args):
-            if j == 0:
-                self.id = arg
-            elif j == 1:
-                self.__width = arg
-            elif j == 2:
-                self.__height = arg
-            elif j == 3:
-                self.__x = arg
-            elif j == 4:
-                self.__y = arg
+            setattr(self, variables[j], arg)
 
         if not args:
-            if "id" in kwargs:
-                self.id = kwargs["id"]
-            if "width" in kwargs:
-                self.__width = kwargs["width"]
-            if "height" in kwargs:
-                self.__height = kwargs["height"]
-            if "x" in kwargs:
-                self.__x = kwargs["x"]
-            if "y" in kwargs:
-                self.__y = kwargs["y"]
+            for key, value in kwargs.items():
+                if key == "size":
+                    setattr(self, "width", value)
+                    setattr(self, "height", value)
+                else:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """ Returns the dict representation of a Rectangle """
@@ -81,7 +70,7 @@ class Rectangle(Base):
         Args:
             value(int): value to set the width of Rectangle to
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value <= 0:
             raise ValueError("width must be > 0")
@@ -102,7 +91,7 @@ class Rectangle(Base):
             value(int): value to set the height of the
             Rectangle to
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value <= 0:
             raise ValueError("height must be > 0")

@@ -8,8 +8,6 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ initializes value of width and height to size """
         super().__init__(size, size, x, y, id)
-        self.width = size
-        self.height = size
 
     @property
     def size(self):
@@ -29,21 +27,32 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """ assigns arguments to attributes """
-        for j, arg in enumerate(args):
-            if j == 0:
-                self.id = arg
-            elif j == 1:
-                self.size = arg
-            elif j == 2:
-                self.x = arg
-            elif j == 3:
-                self.y = arg
+        variables = ["id", "width", "height", "x", "y"]
+        if len(args) == 5:
+            for j, arg in enumerate(args):
+                setattr(self, variables[j], arg)
+        else:
+            for j, arg in enumerate(args):
+                if j == 0:
+                    self.id = arg
+                elif j == 1:
+                    self.width = arg
+                    self.height = arg
+                elif j == 2:
+                    self.x = arg
+                elif j == 3:
+                    self.y = arg
 
         if not args:
             if "id" in kwargs:
                 self.id = kwargs["id"]
             if "size" in kwargs:
-                self.size = kwargs["size"]
+                self.width = kwargs["size"]
+                self.height = kwargs["size"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
             if "x" in kwargs:
                 self.x = kwargs["x"]
             if "y" in kwargs:
@@ -55,7 +64,7 @@ class Square(Rectangle):
             'id': self.id,
             'size': self.size,
             'x': self.x,
-            'y': self.y,
+            'y': self.y
         }
 
     def __str__(self):
