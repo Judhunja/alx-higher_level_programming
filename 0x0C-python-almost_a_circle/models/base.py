@@ -31,21 +31,14 @@ class Base:
         Args:
             list_objs: list of instances that inherits from Base
         """
-        if not list_objs:
+        if not list_objs or list_objs is None:
             list_objs = []
 
         filename = f"{cls.__name__}.json"
 
         clean_objs = []
         for obj in list_objs:
-            obj_dict = {}
-            for key, value in obj.__dict__.items():
-                if key.startswith("_Rectangle__"):
-                    key = key[12:]
-                    obj_dict[key] = value
-                else:
-                    obj_dict[key] = value
-            clean_objs.append(obj_dict)
+            clean_objs.append(cls.to_dictionary(obj))
 
         json_str = cls.to_json_string(clean_objs)
 
