@@ -2,6 +2,7 @@
 """ This module contains a class Base """
 import json
 import os.path
+import csv
 
 
 class Base:
@@ -125,3 +126,38 @@ class Base:
             list_instances.append(instance)
 
         return list_instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV """
+        filename = f"{cls.__name__}.csv"
+
+        if not list_objs or list_objs is None:
+            list_objs = []
+
+        dict_objs = []
+
+        for obj in list_objs:
+            dict_objs.append(cls.to_dictionary(obj))
+
+        with open(filename, "w+", encoding="utf-8") as csv_file:
+            writer = csv.writer(csv_file)
+            writer.writerows(dict_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Deserializes in CSV """
+
+        filename = f"{cls.__name__}.csv"
+
+        loaded_objs = []
+
+        if not os.path.exists(filename):
+            return loaded_objs
+
+        with open(filename, "r", encoding="utf-8") as csv_file:
+            reader = csv.reader(csv_file)
+            for obj in reader:
+                loaded_objs.append(obj)
+
+        return loaded_objs
