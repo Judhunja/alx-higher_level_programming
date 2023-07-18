@@ -27,6 +27,14 @@ class TestRectangle(unittest.TestCase):
         self.r2 = Rectangle(2, 2)
         self.r3 = Rectangle(2, 2, 1, 0)
 
+    def test_id(self):
+        """ Tests whether the id's increment correctly """
+        self.assertEqual(self.r1.id, 12)
+
+    def test_subclass(self):
+        """ Tests if square is a subclass of Rectangle """
+        self.assertTrue(issubclass(Rectangle, Base))
+
     def test_instance(self):
         """ Asserts that rectangle is an instance of Base """
         self.assertTrue(isinstance(self.r1, Base))
