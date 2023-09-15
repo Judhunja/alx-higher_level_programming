@@ -20,7 +20,7 @@ def select():
 
     curs = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%'"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
 
     curs.execute(query)
 
