@@ -35,12 +35,9 @@ def select():
 
     results = curs.fetchall()
 
-    cities = []
-    for city in results:
-            cities += city
-    cities = str(set(cities))
+    cities = [row[0] for row in results]
 
-    clean_cities = cities.replace("'", "").replace("}", "").replace("{", "")
+    clean_cities = ', '.join(cities)
 
     print(clean_cities)
 
