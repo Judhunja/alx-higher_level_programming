@@ -22,8 +22,8 @@ def select():
 
     curs = db.cursor()
 
-    query = "SELECT \
-            * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+    query = "SELECT * FROM states \
+            WHERE BINARY name LIKE '{}' ORDER BY id".format(state_name)
 
     curs.execute(query)
 
