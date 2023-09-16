@@ -20,6 +20,8 @@ if __name__ == "__main__":
 
     session = Session()
 
+    a = 'a'
+
     result = session.query(State).order_by(State.id).first()
 
     if result is None:
