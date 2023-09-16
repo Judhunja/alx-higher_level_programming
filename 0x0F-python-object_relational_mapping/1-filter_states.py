@@ -3,6 +3,7 @@
 
 import MySQLdb
 from sys import argv
+from re import match
 
 
 def select():
@@ -27,7 +28,8 @@ def select():
     results = curs.fetchall()
 
     for state in results:
-        print(state)
+        if match(r'^N', state[1]):
+            print(state)
 
     curs.close()
     db.close()
