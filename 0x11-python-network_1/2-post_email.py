@@ -18,6 +18,6 @@ if __name__ == "__main__":
     with urlopen(req) as response:
         data = response.read()
 
-        data = data.encode('utf-8')
+        data = data.decode('utf-8')
 
     print(data)
