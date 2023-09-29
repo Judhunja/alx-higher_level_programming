@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ This script takes in an url, sends a request to the
 url and displays the body of the response """
-from urllib import urlopen
+from urllib.request import urlopen
 from urllib.error import HTTPError
 from sys import argv
 
