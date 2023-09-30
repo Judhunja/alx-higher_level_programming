@@ -7,7 +7,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    if argv[1] is None:
+    if len(argv) < 2:
         dat = {"q": ""}
     else:
         dat = {"q": argv[1]}
@@ -17,8 +17,8 @@ if __name__ == "__main__":
     if pst is None:
         print("No result")
     else:
-        result = pst.text
+        result = pst.json()
         try:
-            print(f"[{result["id"]}] {result["name"]}")
+            print(f'[{result["id"]}] {result["name"]}')
         except Exception:
             print(f"Not a valid JSON")
