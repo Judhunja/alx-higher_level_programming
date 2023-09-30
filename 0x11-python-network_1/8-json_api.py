@@ -14,10 +14,10 @@ if __name__ == "__main__":
 
     pst = requests.post('http://0.0.0.0:5000/search_user', data=dat)
 
-    if pst is None:
+    result = pst.json()
+    if result is None:
         print("No result")
     else:
-        result = pst.json()
         try:
             print(f'[{result["id"]}] {result["name"]}')
         except Exception:
