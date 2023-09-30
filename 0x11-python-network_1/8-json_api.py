@@ -14,11 +14,11 @@ if __name__ == "__main__":
 
     pst = requests.post('http://0.0.0.0:5000/search_user', data=dat)
 
-    result = pst.json()
-    if not result:
-        print("No result")
-    else:
-        try:
+    try:
+        result = pst.json()
+        if not result:
+            print("No result")
+        else:
             print(f'[{result["id"]}] {result["name"]}')
-        except ValueError:
-            print(f"Not a valid JSON")
+    except ValueError:
+        print(f"Not a valid JSON")
