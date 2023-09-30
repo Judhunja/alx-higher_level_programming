@@ -15,7 +15,7 @@ if __name__ == "__main__":
     pst = requests.post('http://0.0.0.0:5000/search_user', data=dat)
 
     result = pst.json()
-    if result is None:
+    if not result:
         print("No result")
     else:
         try:
